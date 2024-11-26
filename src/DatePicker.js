@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
 import { bool, func, instanceOf, object, objectOf, string } from 'prop-types'
+import React, { useState } from 'react'
+import DatePickerCalendar from './DatePickerCalendar'
+import Popover from './Popover'
 import useDateInput from './useDateInput'
 import useDetectTouch from './useDetectTouch'
 import useOutsideClickHandler from './useOutsideClickHandler'
-import DatePickerCalendar from './DatePickerCalendar'
-import Popover from './Popover'
 
 export default function DatePicker({
   children,
   locale,
   date,
-  onDateChange,
+  onDateChange = () => {},
   format,
   minimumDate,
   maximumDate,
@@ -96,8 +96,4 @@ DatePicker.propTypes = {
   modifiersClassNames: objectOf(string),
   weekdayFormat: string,
   touchDragEnabled: bool
-}
-
-DatePicker.defaultProps = {
-  onDateChange: () => {}
 }

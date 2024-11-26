@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import { differenceInDays, isAfter, isBefore, isSameDay, startOfDay, startOfMonth } from 'date-fns'
 import { bool, func, instanceOf, number, object, objectOf, oneOf, string } from 'prop-types'
-import { differenceInDays, isSameDay, isAfter, isBefore, startOfMonth, startOfDay } from 'date-fns'
-import { isRangeLengthValid, isSelectable, mergeModifiers, setTime } from './utils'
-import { START_DATE, END_DATE } from './constants'
-import useControllableState from './useControllableState'
+import React, { useState } from 'react'
 import Calendar from './Calendar'
+import { END_DATE, START_DATE } from './constants'
+import useControllableState from './useControllableState'
+import { isRangeLengthValid, isSelectable, mergeModifiers, setTime } from './utils'
 
 export default function DateRangePickerCalendar({
   locale,
@@ -12,14 +12,14 @@ export default function DateRangePickerCalendar({
   endDate,
   focus,
   month: receivedMonth,
-  onStartDateChange,
-  onEndDateChange,
-  onFocusChange,
+  onStartDateChange = () => {},
+  onEndDateChange = () => {},
+  onFocusChange = () => {},
   onMonthChange,
   minimumDate,
   maximumDate,
-  minimumLength,
-  maximumLength,
+  minimumLength = 0,
+  maximumLength = null,
   modifiers: receivedModifiers,
   modifiersClassNames,
   weekdayFormat,
@@ -118,9 +118,9 @@ DateRangePickerCalendar.propTypes = {
   endDate: instanceOf(Date),
   focus: oneOf([START_DATE, END_DATE]),
   month: instanceOf(Date),
-  onStartDateChange: func.isRequired,
-  onEndDateChange: func.isRequired,
-  onFocusChange: func.isRequired,
+  onStartDateChange: func,
+  onEndDateChange: func,
+  onFocusChange: func,
   onMonthChange: func,
   minimumDate: instanceOf(Date),
   maximumDate: instanceOf(Date),
@@ -130,12 +130,4 @@ DateRangePickerCalendar.propTypes = {
   modifiersClassNames: objectOf(string),
   weekdayFormat: string,
   touchDragEnabled: bool
-}
-
-DateRangePickerCalendar.defaultProps = {
-  onStartDateChange: () => {},
-  onEndDateChange: () => {},
-  onFocusChange: () => {},
-  minimumLength: 0,
-  maximumLength: null
 }

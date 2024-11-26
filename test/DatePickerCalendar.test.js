@@ -1,8 +1,8 @@
-import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom'
+import { fireEvent, render } from '@testing-library/react'
 import { format, startOfMonth, subMonths } from 'date-fns'
 import { enGB as locale } from 'date-fns/locale'
+import React from 'react'
 import DatePickerCalendar from '../src/DatePickerCalendar'
 
 describe('DatePickerCalendar', () => {

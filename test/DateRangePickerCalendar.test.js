@@ -1,9 +1,9 @@
-import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
-import '@testing-library/jest-dom/extend-expect'
-import { addDays, format, startOfMonth, set, startOfDay, subMonths } from 'date-fns'
+import '@testing-library/jest-dom'
+import { fireEvent, render } from '@testing-library/react'
+import { addDays, format, set, startOfDay, startOfMonth, subMonths } from 'date-fns'
 import { enGB as locale } from 'date-fns/locale'
-import { START_DATE, END_DATE } from '../src/constants'
+import React from 'react'
+import { END_DATE, START_DATE } from '../src/constants'
 import DateRangePickerCalendar from '../src/DateRangePickerCalendar'
 
 describe('DateRangePickerCalendar', () => {

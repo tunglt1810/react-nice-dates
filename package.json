@@ -42,10 +42,10 @@
     "@babel/preset-react": "^7.8.3",
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
-    "@testing-library/dom": "^6.11.0",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
-    "@testing-library/react-hooks": "^3.2.1",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/react-hooks": "^8.0.1",
     "@types/date-fns": "^2.6.0",
     "autoprefixer": "^9.7.3",
     "date-fns": "^2.9.0",
@@ -64,8 +64,8 @@
     "postcss-cli": "^7.1.0",
     "prism-react-renderer": "^1.0.2",
     "prop-types": "^15",
-    "react": "^16",
-    "react-dom": "^16",
+    "react": "^18",
+    "react-dom": "^18",
     "react-test-renderer": "^16.12.0",
     "rollup": "^1.29.0",
     "rollup-plugin-babel": "^4.3.3",
@@ -74,6 +74,7 @@
     "sass": "^1.25.0"
   },
   "dependencies": {
+    "caniuse-lite": "^1.0.30001684",
     "classnames": "^2.2.6"
   }
 }

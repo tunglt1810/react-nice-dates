@@ -1,11 +1,11 @@
-import React from 'react'
-import { bool, func, instanceOf, object, objectOf, string } from 'prop-types'
 import { startOfMonth } from 'date-fns'
-import { isSelectable, mergeModifiers } from './utils'
-import useControllableState from './useControllableState'
+import { bool, func, instanceOf, object, objectOf, string } from 'prop-types'
+import React from 'react'
+import CalendarGrid from './CalendarGrid'
 import CalendarNavigation from './CalendarNavigation'
 import CalendarWeekHeader from './CalendarWeekHeader'
-import CalendarGrid from './CalendarGrid'
+import useControllableState from './useControllableState'
+import { isSelectable, mergeModifiers } from './utils'
 
 export default function Calendar({
   locale,

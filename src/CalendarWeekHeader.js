@@ -1,8 +1,8 @@
-import React from 'react'
+import { eachDayOfInterval, endOfWeek, format, startOfWeek } from 'date-fns'
 import { object, string } from 'prop-types'
-import { eachDayOfInterval, endOfWeek, startOfWeek, format } from 'date-fns'
+import React from 'react'
 
-export default function CalendarWeekHeader({ locale, weekdayFormat }) {
+export default function CalendarWeekHeader({ locale, weekdayFormat = 'eee' }) {
   const today = new Date()
 
   const weekDays = eachDayOfInterval({
@@ -24,8 +24,4 @@ export default function CalendarWeekHeader({ locale, weekdayFormat }) {
 CalendarWeekHeader.propTypes = {
   locale: object.isRequired,
   weekdayFormat: string
-}
-
-CalendarWeekHeader.defaultProps = {
-  weekdayFormat: 'eee'
 }

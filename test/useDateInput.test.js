@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks'
+import { renderHook } from '@testing-library/react'
 import { enGB } from 'date-fns/locale'
 import useDateInput from '../src/useDateInput'
 

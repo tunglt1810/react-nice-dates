@@ -1,10 +1,10 @@
-import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom'
+import { fireEvent, render } from '@testing-library/react'
+import classNames from 'classnames'
 import { format, subMonths } from 'date-fns'
 import { enGB as locale } from 'date-fns/locale'
-import classNames from 'classnames'
-import { START_DATE, END_DATE } from '../src/constants'
+import React from 'react'
+import { END_DATE, START_DATE } from '../src/constants'
 import DateRangePicker from '../src/DateRangePicker'
 
 describe('DateRangePicker', () => {
