@@ -10,10 +10,10 @@ export default function useDetectTouch() {
     }
 
     const removeListener = () => {
-      document.removeEventListener('touchstart', handleTouch)
+      document.removeEventListener('touchstart', handleTouch, { passive: true })
     }
 
-    document.addEventListener('touchstart', handleTouch)
+    document.addEventListener('touchstart', handleTouch, { passive: true })
     return removeListener
   }, [])
 

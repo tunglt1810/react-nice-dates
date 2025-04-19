@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect, useEffect, useReducer } from 'react'
+import { useEffect, useLayoutEffect, useReducer, useRef } from 'react'
 
 import {
   addMonths,
@@ -200,14 +200,14 @@ export default function useGrid({ locale, month: currentMonth, onMonthChange, tr
         }
       }
 
-      containerElement.addEventListener('touchstart', handleDragStart)
-      containerElement.addEventListener('touchmove', handleDrag)
-      containerElement.addEventListener('touchend', handleDragEnd)
+      containerElement.addEventListener('touchstart', handleDragStart, { passive: true })
+      containerElement.addEventListener('touchmove', handleDrag, { passive: true })
+      containerElement.addEventListener('touchend', handleDragEnd, { passive: true })
 
       return () => {
-        containerElement.removeEventListener('touchstart', handleDragStart)
-        containerElement.removeEventListener('touchmove', handleDrag)
-        containerElement.removeEventListener('touchend', handleDragEnd)
+        containerElement.removeEventListener('touchstart', handleDragStart, { passive: true })
+        containerElement.removeEventListener('touchmove', handleDrag, { passive: true })
+        containerElement.removeEventListener('touchend', handleDragEnd, { passive: true })
       }
     }
   })
