@@ -1,20 +1,24 @@
 {
-  "name": "react-nice-dates",
-  "version": "3.1.0",
+  "name": "@tunglt91/react-nice-dates",
+  "version": "3.1.6",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "unpkg": "build/index.umd.js",
   "author": "Hernán Sartorio",
   "license": "MIT",
   "types": "index.d.ts",
+  "packageManager": "bun@1.4.2",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hernansartorio/react-nice-dates.git"
+    "url": "git+https://github.com/tunglt1810/react-nice-dates.git"
   },
   "bugs": {
-    "url": "https://github.com/hernansartorio/react-nice-dates/issues"
+    "url": "https://github.com/tunglt1810/react-nice-dates/issues"
   },
-  "homepage": "https://github.com/hernansartorio/react-nice-dates#readme",
+  "homepage": "https://github.com/tunglt1810/react-nice-dates#readme",
   "files": [
     "build",
     "src/style.scss",
@@ -26,9 +30,10 @@
     "build:website": "rm -rf build-website/* && parcel build website/index.html -d build-website --experimental-scope-hoisting --no-content-hash && cp website/CNAME build-website/CNAME",
     "deploy": "gh-pages -d build-website",
     "lint": "eslint --cache --format codeframe src test website",
-    "release": "yarn run build && np",
+    "release": "bun run build && bun publish --access public",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "prepublishOnly": "bun run build"
   },
   "peerDependencies": {
     "date-fns": "^2.0.0",
