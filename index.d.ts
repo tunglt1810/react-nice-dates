@@ -87,15 +87,15 @@ declare module "react-nice-dates" {
     onMonthChange?: DateChangeCallBack;
   }
 
-  export function Calendar(props: CalendarProps): JSX.Element;
-  export function DatePicker(props: DatePickerProps): JSX.Element;
-  export function DateRangePicker(props: DateRangePickerProps): JSX.Element;
+  export function Calendar(props: CalendarProps): React.JSX.Element;
+  export function DatePicker(props: DatePickerProps): React.JSX.Element;
+  export function DateRangePicker(props: DateRangePickerProps): React.JSX.Element;
   export function DatePickerCalendar(
     props: DatePickerCalendarProps
-  ): JSX.Element;
+  ): React.JSX.Element;
   export function DateRangePickerCalendar(
     props: DateRangePickerCalendarProps
-  ): JSX.Element;
+  ): React.JSX.Element;
   
   export function useDateInput({
     date,

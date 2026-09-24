@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import DatePickerExample from './examples/DatePickerExample'
 import DateRangePickerExample from './examples/DateRangePickerExample'
 import DatePickerCalendarExample from './examples/DatePickerCalendarExample'
@@ -393,4 +393,4 @@ if (module.hot) {
   module.hot.accept()
 }
 
-render(<App />, document.getElementById('root'))
+createRoot(document.getElementById('root')).render(<App />)
