@@ -389,8 +389,4 @@ const {
   )
 }
 
-if (module.hot) {
-  module.hot.accept()
-}
-
 createRoot(document.getElementById('root')).render(<App />)

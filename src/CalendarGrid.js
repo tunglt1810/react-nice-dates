@@ -9,7 +9,7 @@ import useGrid from './useGrid'
 const computeModifiers = (modifiers, date) => {
   const computedModifiers = {}
 
-  Object.keys(modifiers).map(key => {
+  Object.keys(modifiers).forEach(key => {
     computedModifiers[key] = modifiers[key](date)
   })
 
