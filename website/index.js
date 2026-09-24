@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import DatePickerExample from './examples/DatePickerExample'
 import DateRangePickerExample from './examples/DateRangePickerExample'
 import DatePickerCalendarExample from './examples/DatePickerCalendarExample'
@@ -12,6 +12,7 @@ import CalendarExample from './examples/CalendarExample'
 import CodeBlock from './CodeBlock'
 import DatePickerWithTimeInputExample from './examples/DatePickerWithTimeInputExample'
 import DatePickerWithTimeExample from './examples/DatePickerWithTimeExample'
+import './style.scss'
 
 function App() {
   return (
@@ -389,8 +390,4 @@ const {
   )
 }
 
-if (module.hot) {
-  module.hot.accept()
-}
-
-render(<App />, document.getElementById('root'))
+createRoot(document.getElementById('root')).render(<App />)

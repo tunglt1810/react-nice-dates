@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import { fireEvent, render } from '@testing-library/react'
 import { addDays, format, set, startOfDay, startOfMonth, subMonths } from 'date-fns'
 import { enGB as locale } from 'date-fns/locale'

@@ -1,79 +1,72 @@
 {
-  "name": "react-nice-dates",
-  "version": "3.1.0",
+  "name": "@tunglt91/react-nice-dates",
+  "version": "3.1.6",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "unpkg": "build/index.umd.js",
   "author": "Hernán Sartorio",
   "license": "MIT",
   "types": "index.d.ts",
+  "packageManager": "bun@1.4.2",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hernansartorio/react-nice-dates.git"
+    "url": "git+https://github.com/tunglt1810/react-nice-dates.git"
   },
   "bugs": {
-    "url": "https://github.com/hernansartorio/react-nice-dates/issues"
+    "url": "https://github.com/tunglt1810/react-nice-dates/issues"
   },
-  "homepage": "https://github.com/hernansartorio/react-nice-dates#readme",
+  "homepage": "https://github.com/tunglt1810/react-nice-dates#readme",
   "files": [
     "build",
     "src/style.scss",
     "index.d.ts"
   ],
   "scripts": {
-    "start": "parcel website/index.html -d tmp",
-    "build": "rollup -c && sass src/style.scss build/style.css --no-source-map && postcss build/style.css --use autoprefixer -o build/style.css",
-    "build:website": "rm -rf build-website/* && parcel build website/index.html -d build-website --experimental-scope-hoisting --no-content-hash && cp website/CNAME build-website/CNAME",
+    "start": "rsbuild dev",
+    "build": "rslib build && sass src/style.scss build/style.css --no-source-map && postcss build/style.css --use autoprefixer -o build/style.css",
+    "build:website": "rsbuild build",
     "deploy": "gh-pages -d build-website",
-    "lint": "eslint --cache --format codeframe src test website",
-    "release": "yarn run build && np",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "lint": "eslint --cache src test website",
+    "release": "bun run build && bun publish --access public",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "prepublishOnly": "bun run build"
   },
   "peerDependencies": {
-    "date-fns": "^2.0.0",
+    "date-fns": "^2.0.0 || ^3.0.0 || ^4.0.0",
     "prop-types": "^15",
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "@babel/preset-react": "^7.8.3",
-    "@rollup/plugin-commonjs": "^11.0.1",
-    "@rollup/plugin-node-resolve": "^7.0.0",
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.0.1",
-    "@types/date-fns": "^2.6.0",
-    "autoprefixer": "^9.7.3",
-    "date-fns": "^2.9.0",
-    "eslint": "^6.8.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.20.0",
-    "eslint-plugin-jest": "^23.6.0",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-react-hooks": "^2.3.0",
-    "eslint-plugin-standard": "^4.0.1",
-    "jest": "^24.9.0",
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-prerender": "^1.4.1",
-    "postcss-cli": "^7.1.0",
-    "prism-react-renderer": "^1.0.2",
-    "prop-types": "^15",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-test-renderer": "^18.3.1",
-    "rollup": "^1.29.0",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-eslint": "^7.0.0",
-    "rollup-plugin-sass": "^1.2.2",
-    "sass": "^1.25.0"
+    "@happy-dom/global-registrator": "^20.14.5",
+    "@rsbuild/core": "^2.2.9",
+    "@rsbuild/plugin-react": "^2.1.0",
+    "@rsbuild/plugin-sass": "^2.0.1",
+    "@rslib/core": "^1.0.2",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "autoprefixer": "^10.6.1",
+    "date-fns": "^4.4.0",
+    "eslint": "^9.39.5",
+    "eslint-plugin-jest": "^29.16.6",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.12.0",
+    "neostandard": "^0.13.0",
+    "postcss": "^8.5.28",
+    "postcss-cli": "^12.0.0",
+    "prism-react-renderer": "^2.4.1",
+    "prop-types": "^15.8.1",
+    "react": "^19",
+    "react-dom": "^19",
+    "sass": "^1.105.0"
   },
   "dependencies": {
-    "caniuse-lite": "^1.0.30001684",
-    "classnames": "^2.2.6"
+    "classnames": "^2.5.1"
   }
 }

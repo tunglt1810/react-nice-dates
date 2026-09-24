@@ -191,7 +191,7 @@ export default function useGrid({ locale, month: currentMonth, onMonthChange, tr
           initialDragPositionRef.current = 0
           containerElement.style.transform = 'translate3d(0, 0, 0)'
           containerElement.classList.remove('-transition')
-          dispatch({ type: 'reset', currentMonth: currentMonth })
+          dispatch({ type: 'reset', currentMonth })
         }, transitionDuration)
 
         if (Math.abs(initialDragPositionRef.current - currentMonthPosition - event.changedTouches[0].clientY) > 10) {
