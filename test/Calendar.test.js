@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
 import { format } from 'date-fns'
 import { enGB as locale } from 'date-fns/locale'

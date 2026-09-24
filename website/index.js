@@ -12,6 +12,7 @@ import CalendarExample from './examples/CalendarExample'
 import CodeBlock from './CodeBlock'
 import DatePickerWithTimeInputExample from './examples/DatePickerWithTimeInputExample'
 import DatePickerWithTimeExample from './examples/DatePickerWithTimeExample'
+import './style.scss'
 
 function App() {
   return (

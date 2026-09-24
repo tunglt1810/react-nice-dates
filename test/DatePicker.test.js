@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import { fireEvent, render } from '@testing-library/react'
 import classNames from 'classnames'
 import { format, subMonths } from 'date-fns'

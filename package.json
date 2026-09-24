@@ -25,14 +25,14 @@
     "index.d.ts"
   ],
   "scripts": {
-    "start": "parcel website/index.html --dist-dir tmp",
-    "build": "rollup -c && sass src/style.scss build/style.css --no-source-map && postcss build/style.css --use autoprefixer -o build/style.css",
-    "build:website": "rm -rf build-website/* && parcel build website/index.html --dist-dir build-website --no-content-hash && cp website/CNAME build-website/CNAME",
+    "start": "rsbuild dev",
+    "build": "rslib build && sass src/style.scss build/style.css --no-source-map && postcss build/style.css --use autoprefixer -o build/style.css",
+    "build:website": "rsbuild build",
     "deploy": "gh-pages -d build-website",
     "lint": "eslint --cache src test website",
     "release": "bun run build && bun publish --access public",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
     "prepublishOnly": "bun run build"
   },
   "peerDependencies": {
@@ -42,13 +42,11 @@
     "react-dom": "^18 || ^19"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.7",
-    "@babel/preset-env": "^7.29.7",
-    "@babel/preset-react": "^7.29.7",
-    "@parcel/transformer-sass": "^2.16.4",
-    "@rollup/plugin-babel": "^7.1.0",
-    "@rollup/plugin-commonjs": "^29.0.3",
-    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@happy-dom/global-registrator": "^20.14.5",
+    "@rsbuild/core": "^2.2.9",
+    "@rsbuild/plugin-react": "^2.1.0",
+    "@rsbuild/plugin-sass": "^2.0.1",
+    "@rslib/core": "^1.0.2",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
@@ -59,28 +57,16 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.12.0",
-    "jest": "^30.5.2",
-    "jest-environment-jsdom": "^30.5.2",
     "neostandard": "^0.13.0",
-    "parcel": "^2.16.4",
     "postcss": "^8.5.28",
     "postcss-cli": "^12.0.0",
     "prism-react-renderer": "^2.4.1",
     "prop-types": "^15.8.1",
     "react": "^19",
     "react-dom": "^19",
-    "rollup": "^4.63.5",
     "sass": "^1.105.0"
   },
   "dependencies": {
     "classnames": "^2.5.1"
-  },
-  "jest": {
-    "testEnvironment": "jsdom"
-  },
-  "targets": {
-    "main": false,
-    "module": false,
-    "types": false
   }
 }

@@ -5,7 +5,7 @@ import jest from 'eslint-plugin-jest'
 import globals from 'globals'
 
 export default [
-  { ignores: ['build/', 'build-website/', 'tmp/', '.parcel-cache/'] },
+  { ignores: ['build/', 'build-website/'] },
   ...neostandard({ noJsx: true }),
   {
     rules: {
@@ -33,10 +33,8 @@ export default [
   },
   {
     files: ['test/**/*.js'],
-    ...jest.configs['flat/recommended']
-  },
-  {
-    files: ['babel.config.js'],
-    languageOptions: { globals: { ...globals.node } }
+    ...jest.configs['flat/recommended'],
+    // Tests run on `bun test`, which implements the Jest 30 API
+    settings: { jest: { version: 30 } }
   }
 ]
